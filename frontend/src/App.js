@@ -1,10 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
-
-  const naam = "Jasper en Sander"
-
+  const naam = "Jasper en Sander";
 
   return (
     <div className="App">
