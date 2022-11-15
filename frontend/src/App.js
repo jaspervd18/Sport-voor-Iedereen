@@ -1,11 +1,17 @@
-import "./App.css";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Sport from "./pages/Sport";
 
 function App() {
-  const naam = "Jasper en Sander";
-
   return (
-    <div className="App">
-      <p>{naam}</p>
+    <div className="">
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="*" element={<Home />} />
+        <Route path="sport" element={<Sport />} />
+      </Routes>
     </div>
   );
 }
