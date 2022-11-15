@@ -1,14 +1,43 @@
 {
+  "name": "backend_schreiffout",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jaspervd18/schreiffout.git",
+  "author": "Jasper Van Dyck <jasper.vandyck@student.hogent.be>",
+  "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "npx env-cmd nodemon src/index.js"
+  },
+  "nodemonConfig": {
+    "signal": "SIGTERM",
+    "ignore": [
+      "node_modules/*",
+      ".vscode/*"
+    ],
+    "delay": "80",
+    "watch": [
+      "config",
+      "src"
+    ],
+    "ext": "js,json",
+    "legacyWatch": true,
+    "exec": "node --inspect=0.0.0.0:9001 --trace-warnings src/index.js"
   },
   "dependencies": {
     "@koa/cors": "^4.0.0",
     "@koa/router": "^12.0.0",
+    "argon2": "^0.30.1",
     "config": "^3.3.8",
     "env-cmd": "^10.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.3.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.2",
+    "node-input-validator": "^4.5.0",
+    "path": "^0.12.7",
+    "uuid": "^9.0.0",
     "winston": "^3.8.2"
   },
   "devDependencies": {
